@@ -2,6 +2,9 @@ version: 1.0.{build}
 image: Visual Studio 2017
 configuration: Release
 
+before_build:
+- appveyor-retry dotnet restore ConsoleWalker.sln
+
 build_script:
 - dotnet publish ConsoleWalker -o ../artifacts -c %CONFIGURATION% /p:Version=%APPVEYOR_BUILD_VERSION%
 
