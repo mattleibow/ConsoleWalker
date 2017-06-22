@@ -9,7 +9,7 @@ build_script:
 - dotnet publish ConsoleWalker -o artifacts -c %CONFIGURATION% /p:Version=%APPVEYOR_BUILD_VERSION%
 
 after_build:
- - 7z a artifacts\ConsoleWalker.zip %APPVEYOR_BUILD_FOLDER%\ConsoleWalker\artifacts\*
+ - 7z a artifacts\ConsoleWalker-%APPVEYOR_BUILD_VERSION%.zip %APPVEYOR_BUILD_FOLDER%\ConsoleWalker\artifacts\*
 
 artifacts:
 - path: artifacts\**\*
